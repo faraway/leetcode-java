@@ -20,16 +20,16 @@ public class SprialMatrixII {
        int val=1;
        for(int i=0;i<=n/2;i++){
             //top elements
-            for(int j=i;j<matrix[0].length-i-1;j++)
+            for(int j=i;j<n-i-1;j++)
                 matrix[i][j]=val++;
             //right elements
-            for(int j=i;j<matrix.length-i-1;j++)
-                matrix[j][matrix[0].length-1-i]=val++;
+            for(int j=i;j<n-i-1;j++)
+                matrix[j][n-1-i]=val++;
             //bottom elements
-            for(int j=matrix[0].length-1-i;j>i;j--)
-                matrix[matrix.length-1-i][j]=val++;
+            for(int j=n-1-i;j>i;j--)
+                matrix[n-1-i][j]=val++;
             //left elements
-            for(int j=matrix.length-i-1;j>i;j--)
+            for(int j=n-i-1;j>i;j--)
                 matrix[j][i]=val++;
         }
         if((n&1)==1)
