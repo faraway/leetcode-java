@@ -21,9 +21,11 @@ import java.util.ArrayList;
  */
 
 public class CombinationSum {
-	private ArrayList<ArrayList<Integer>> result;
-    	/**entry function**/
-    	public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+	
+    private ArrayList<ArrayList<Integer>> result;
+    
+    /**entry function**/
+    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
         
         result = new ArrayList<ArrayList<Integer>>();
         java.util.Arrays.sort(candidates);
