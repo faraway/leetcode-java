@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * @goodjob :)
  */
 public class CombinationSumII {
-	private ArrayList<ArrayList<Integer>> result;
+    private ArrayList<ArrayList<Integer>> result;
     
     public ArrayList<ArrayList<Integer>> combinationSum2(int[] candidates, int target) {
         
@@ -32,15 +32,15 @@ public class CombinationSumII {
         return result;
     }
     
-    private boolean findCombinations(int[] candidates,int target,int index,ArrayList<Integer> pre){
+    private void findCombinations(int[] candidates,int target,int index,ArrayList<Integer> pre){
         if(index>=candidates.length||target<candidates[index]){
-            return false;
+            return;
         }
-        /**don't include current candidate at position [index]**/
+        /**find one combination**/
         if(candidates[index]==target){
             pre.add(candidates[index]);
             result.add(pre);
-            return true;
+            return;
         }
         if(candidates[index]<target){
             int current = candidates[index];
@@ -69,6 +69,5 @@ public class CombinationSumII {
             }
             findCombinations(candidates,target,index,pre);
         }
-        return true;
     }
 }
