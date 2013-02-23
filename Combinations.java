@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 
 public class Combinations {
-	private ArrayList<ArrayList<Integer>> result;
+    private ArrayList<ArrayList<Integer>> result;
     /**
      * entry method
      * @param n
@@ -44,26 +44,26 @@ public class Combinations {
      * @param pre
      * @return
      */
-    private boolean findCombinations(int n, int k, int start,ArrayList<Integer> pre){
+    private void findCombinations(int n, int k, int start,ArrayList<Integer> pre){
     	
         if(n-start+1==k){//left elements = k, so they should all be added to the list.
             for(int i=start;i<=n;i++){
                 pre.add(i);
             }
             result.add(pre);
-            return true;
+            return;
         }else{//we can choose add current integer or not.
-        	//add current one.
+            //add current one.
             ArrayList<Integer> temp = (ArrayList<Integer>)pre.clone();
             temp.add(start);
             if(k-1==0){//the last one.
                 result.add(temp);
+                return;
             }else{
                 findCombinations(n,k-1,start+1,temp);
             }
             //don't add current one, jump to next int.
             findCombinations(n,k,start+1,pre);
         }
-        return true;
     }
 }
