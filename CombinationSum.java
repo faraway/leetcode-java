@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 	Note:
 
-    All numbers (including target) will be positive integers.
-    Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
-    The solution set must not contain duplicate combinations.
+    	All numbers (including target) will be positive integers.
+    	Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
+    	The solution set must not contain duplicate combinations.
 
 	For example, given candidate set 2,3,6,7 and target 7,
 	A solution set is:
@@ -22,8 +22,8 @@ import java.util.ArrayList;
 
 public class CombinationSum {
 	private ArrayList<ArrayList<Integer>> result;
-    /**entry function**/
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+    	/**entry function**/
+    	public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
         
         result = new ArrayList<ArrayList<Integer>>();
         java.util.Arrays.sort(candidates);
