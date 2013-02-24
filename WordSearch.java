@@ -17,7 +17,7 @@ package leetcode;
 	word = "SEE", -> returns true,
 	word = "ABCB", -> returns false.
  * @author patrick
- * TODO DP method?
+ * Simple DFS
  */
 public class WordSearch {
     private int[][] boardCheck;
@@ -73,17 +73,10 @@ public class WordSearch {
         if(result){
             return true;
         }else{
-        	//reset the flag to 0, since this is not the path, this cell won't be occupied by this call.
+            //reset the flag to 0, since this is not the path, this cell won't be occupied by this call.
             boardCheck[x][y]=0;
             return false;
         }
         
-    }
-    
-    
-    public static void main(String[] args){
-    	WordSearch w = new WordSearch();
-    	char[][] board = {{'a','a'}};
-    	w.exist(board, "a");
     }
 }
