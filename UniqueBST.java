@@ -12,6 +12,9 @@ package leetcode;
    2     1         2                 3
 
  * @author Patrick Yao
+ * @NOTE: This is one of the problems which are cartesian number in nature
+ *        We can calculate it directly by the folloing formula:
+ * 			N = 1/(n+1) * C(2n,n)
  */
 public class UniqueBST {
 	
