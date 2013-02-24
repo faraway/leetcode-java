@@ -86,6 +86,7 @@ public class SymmetricTree {
 	    					break outer;
 	    				}
 	    			}
+	    			//add nodes for next level
 	    			for(int i=0;i<current.size();i++){
 	    				if(current.get(i)!=null){
 	    					next.add(current.get(i).left);
