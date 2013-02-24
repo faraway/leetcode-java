@@ -14,7 +14,7 @@ package leetcode;
  * @note goodjob
  */
 public class InterleavingString {
-	private String s1;
+    private String s1;
     private String s2;
     private String s3;
     
@@ -45,20 +45,18 @@ public class InterleavingString {
             return s1.substring(x1).equals(s3.substring(x3));
         }
         if(s1.charAt(x1)!=s2.charAt(x2)){
-            if(s1.charAt(x1)==s3.charAt(x3)){
+            if(s1.charAt(x1)==s3.charAt(x3))
                 return check(x1+1,x2,x3+1);
-            }else if(s2.charAt(x2)==s3.charAt(x3)){
+            else if(s2.charAt(x2)==s3.charAt(x3))
                 return check(x1,x2+1,x3+1);
-            }
-            else{
+            else //not match
                 return false;
-            }
         }else{
-            if(s3.charAt(x3)!=s1.charAt(x1)){
+            //not match
+            if(s3.charAt(x3)!=s1.charAt(x1))
                 return false;
-            }else{
+            else //use char of s1 or s2
                 return check(x1+1,x2,x3+1)||check(x1,x2+1,x3+1);
-            }
         }
     }
     /**
