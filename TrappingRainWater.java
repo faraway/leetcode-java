@@ -10,11 +10,11 @@ package leetcode;
  *
  */
 public class TrappingRainWater {
-	public int trap(int[] A) {
-		if(A.length<3)
-			return 0;
+    public int trap(int[] A) {
+	if(A.length<3)
+		return 0;
 		
-		int sum=0;
+	int sum=0;
         int min=A[0]<A[A.length-1]? A[0]:A[A.length-1];
         
         int start = 0;
