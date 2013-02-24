@@ -16,8 +16,8 @@ Could you come up with an one-pass algorithm using only constant space?
  *
  */
 public class SortColors {
-	int[] A;
-	public void sortColors(int[] A) {
+    int[] A;
+    public void sortColors(int[] A) {
 		this.A=A;
         int red=0; //0s
         int white=0; //1s
@@ -47,18 +47,9 @@ public class SortColors {
         }
     }
 	
-	private void swap(int i,int j){
+    private void swap(int i,int j){
 		int temp = A[i];
 		A[i]=A[j];
 		A[j]=temp;
-	}
-	
-	public static void main(String[] args){
-		int[] data = new int[] {2,2,1,2,1,1,1,0,0,2,1,0,2,1,2,2,1,1,1,1,1,0,2,0,2,0,2,2,1,0,2,1,0,2,1,2,0,0,0,0,2,1,1,2,0,1,2,2,0,0,2,2,0,1,0,1,0,0,1,1,1,0,0,2,2,2,1,0,0,2,1,0,1,0,2,2,1,2,1,1,2,1,1,0,0,2,1,0,0};
-		SortColors test = new SortColors();
-		test.sortColors(data);
-		for(int i=0;i<data.length;i++){
-			System.out.print(data[i]+",");
-		}
-	}
+    }
 }
