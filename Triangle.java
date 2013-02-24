@@ -24,9 +24,11 @@ where n is the total number of rows in the triangle.
  *
  */
 public class Triangle {
-	public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
+    public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
+    	
         ArrayList<Integer> pre = new ArrayList<Integer>();
         ArrayList<Integer> current = new ArrayList<Integer>();
+        
         if(triangle.size()==1){
         	return triangle.get(0).get(0);
         }
