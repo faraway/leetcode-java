@@ -24,12 +24,12 @@ you are guaranteed that there will always be only one unique minimum window in S
  */
 public class MinimumWindowSubstring {
 	
-	public String minWindow(String S, String T) {
+    public String minWindow(String S, String T) {
         Queue<Integer> q = new LinkedList<Integer>();
         /**
          * chars from 'A' (65)  to 'z' (122) including '_' etc.
          */
-    	int[] t = new int[58];
+    	int[] t = new int[58]; // to record the chars in T
     	int[] check = new int[58];
     	//last index inserted into the queue
     	int lastIndex = 0;
@@ -72,18 +72,9 @@ public class MinimumWindowSubstring {
     		}
     	}
     	if(totalChar<T.length())//not found
-    		return "";
+    	    return "";
     	else
-    		return S.substring(start,end+1);
+    	    return S.substring(start,end+1);
         
-    }
-	
-	
-	public static void main(String[] args){
-		MinimumWindowSubstring test = new MinimumWindowSubstring();
-		//expected : BANC
-		System.out.println(test.minWindow("ADOBECODEBANC", "ABC")); 
-		//expected: sk_not_what_your_c
-		System.out.println(test.minWindow("ask_not_what_your_country_can_do_for_you_ask_what_you_can_do_for_your_country", "ask_country"));
-	}
+     }
 }
