@@ -18,7 +18,7 @@ import java.util.Stack;
  *
  */
 public class LargestRectangleInHistogram {
-	private int max;
+    private int max;
     
     private int[] height;
     
