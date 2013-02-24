@@ -64,8 +64,36 @@ public class LongestSubstringWithoutRepeatingCharacters {
 	       return max;
 	}
 	
-	public static void main(String[] args){
-		LongestSubstringWithoutRepeatingCharacters lsw = new LongestSubstringWithoutRepeatingCharacters();
-		System.out.println(lsw.lengthOfLongestSubstring("abcbaebcdef"));
-	}
+	/**simplified version. similar idea with <Minimum Window Substring> | Feb.23rd,2013**/
+	public int lengthOfLongestSubstring_revised(String s) {
+        	if(s.length()==0)
+            		return 0;
+            		
+        	int[] check = new int[26];
+        	Queue<Integer> q = new LinkedList<Integer>();
+        
+        	int max=0;
+        	int current=0;
+        
+        	for(int i=0;i<s.length();i++){
+            		q.offer(i);
+            		int x = s.charAt(i)-'a';
+            		if(check[x]==0){
+                	    check[x]=1;  
+                	    current++;
+            		}else{
+                 	    if(current>max)
+                    		max=current;
+                	    int idx = q.poll();
+                	    while(s.charAt(idx)!=s.charAt(i)){
+                    	    	check[s.charAt(idx)-'a']=0;
+                    		current--;
+                    		idx=q.poll();
+               		    }
+            	        }
+        	}
+        	if(current>max)
+             	    max=current;
+        	return max;
+        }
 }
