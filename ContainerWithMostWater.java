@@ -6,7 +6,7 @@ public class ContainerWithMostWater {
 	 * @param height
 	 * @return
 	 */
-	public int maxArea(int[] height) {
+    public int maxArea(int[] height) {
         int start = height[0];
         int end   = height[1];
         int threshold = start>end?end:start;
@@ -34,7 +34,7 @@ public class ContainerWithMostWater {
 	 * @param height
 	 * @return
 	 */
-	public int maxAreaOptimal(int[] height) {
+    public int maxAreaOptimal(int[] height) {
         int max=0;
         int a=0;
         int b=height.length-1;
