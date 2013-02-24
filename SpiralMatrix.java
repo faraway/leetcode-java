@@ -13,6 +13,7 @@ Given the following matrix:
 
 public class SpiralMatrix {
     public ArrayList<Integer> spiralOrder(int[][] matrix) {
+     
         ArrayList<Integer> list = new ArrayList<Integer>();
 
         int rows = matrix.length;
