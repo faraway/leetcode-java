@@ -5,7 +5,8 @@ package leetcode;
  *
  */
 public class ConverteSortedArrayToBST {
-	public TreeNode sortedArrayToBST(int[] num) {
+	
+    public TreeNode sortedArrayToBST(int[] num) {
         return constructTree(0,num.length-1,num);  
     }
     
