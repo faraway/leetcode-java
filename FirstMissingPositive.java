@@ -36,8 +36,8 @@ public class FirstMissingPositive {
      * @return
      */
     int firstMissingPositive(int A[], int n){
-    	    for (int i = 0; i < n; i++)
-    	    {
+    	    for (int i = 0; i < n; i++){
+    	    	
     	        if (A[i] == i+1) continue;
     	 
     	        while (A[i] >= 1 && A[i] <= n && A[i] != i+1
