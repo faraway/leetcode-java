@@ -12,34 +12,39 @@ import java.util.Map;
  * @date   2012.7.11
  */
 public class Sum3 {
-	
-	public static void main(String[] args){
-			int[][]	a = new int[5][7];
-			String s = "213213";
-			Map<String,Integer> map = new HashMap<String,Integer>();
-			System.out.println(a.length+"--"+a[0].length);
-	}
-	
-   
 
+    public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+    	
+         ArrayList<ArrayList<Integer>> result = new  ArrayList<ArrayList<Integer>>();
+         java.util.Arrays.sort(num);
+         
+         for(int i=0;i<num.length;i++){
+             if(i!=0 && num[i]==num[i-1])
+                continue;
+             int first = num[i];
+             
+             int start = i+1;
+             int end = num.length-1;
+             while(start<end){
+                 if(start!=i+1 && num[start]==num[start-1]){
+                     start++;
+                     continue;
+                 } 
+                 if(first+num[start]+num[end]>0)
+                    end--;
+                 else if(first+num[start]+num[end]<0)
+                    start++;
+                 else{//triplets found
+                     ArrayList<Integer> list = new ArrayList<Integer>();
+                     list.add(first);
+                     list.add(num[start]);
+                     list.add(num[end]);
+                     result.add(list);
+                     start++;
+                 }
+             }
+         }
+         return result;
+    }
 }
-
-class WithStatic{
-//	static void superStatic(){
-//		System.out.println("Super");
-//	}
-	
-	void superStatic(){
-		
-	}
-}
-
-//class Sub{
-//	@Override
-//	void superStatic(){
-//		System.out.println("Super");
-//	}
-//}
-
-
 
