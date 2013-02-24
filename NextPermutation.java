@@ -12,7 +12,6 @@ package leetcode;
 	3,2,1 → 1,2,3
 	1,1,5 → 1,5,1
 	
-	//TODO to be tested ; OJ runtime error;
  * @author patrick
  *
  */
@@ -39,7 +38,7 @@ public class NextPermutation {
 			num[next]=temp;
 			java.util.Arrays.sort(num,lastIndex+1,num.length);
 		}
-    }
+        }
 	
 	public static void main(String[] args){
 		NextPermutation test = new NextPermutation();
