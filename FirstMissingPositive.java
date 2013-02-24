@@ -36,22 +36,21 @@ public class FirstMissingPositive {
      * @return
      */
     int firstMissingPositive(int A[], int n){
+    	    //set the array if array[i]==i+1
     	    for (int i = 0; i < n; i++){
-    	    	
     	        if (A[i] == i+1) continue;
     	 
-    	        while (A[i] >= 1 && A[i] <= n && A[i] != i+1
-    	            && A[A[i]-1] != A[i])
-    	            swap(A[i], A[A[i]-1]);
+    	        while (A[i] >= 1 && A[i] <= n && A[i] != i+1 && A[A[i]-1] != A[i]){
+    	        	//swap A[i] and A[A[i]-1]
+    	        	A[i]=A[i]^A[A[i]-1];
+    	        	A[A[i]-1]=A[i]^A[A[i]-1];
+    	        	A[i]=A[i]^A[A[i]-1]
+    	        }
     	    }
-    	 
+    	    //go through the array, find the first array[i]!=i+1, is our answer
     	    for (int i = 0; i < n; i++)
     	        if (A[i] != i+1) return i+1;
-    	 
+    	    //if the array are all set, then answer is n+1
     	    return n+1;
-   }
-    
-   void swap(int a ,int b){
-	   
    }
 }
