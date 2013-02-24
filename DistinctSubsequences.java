@@ -14,7 +14,6 @@ package leetcode;
  */
 public class DistinctSubsequences {
 	 public int numDistinct(String S, String T) {
-	        
 	        return Subsequences(0,0,S,T);
 	        
 	 }
