@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ConvertSortedListToBST {
 	
-	 public TreeNode sortedListToBST(ListNode head) {
+	    public TreeNode sortedListToBST(ListNode head) {
 	        List<ListNode> list = new ArrayList<ListNode>(); 
 	        while(head!=null){
 	            list.add(head);
