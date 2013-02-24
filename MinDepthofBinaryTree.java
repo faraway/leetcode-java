@@ -6,14 +6,14 @@ package leetcode;
  */
 public class MinDepthofBinaryTree {
 	public int minDepth(TreeNode root) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        if(root==null){
-            return 0;
-        }else{
-            return minTreeDepth(root,1); // root is level 1 !!!
+        	// Start typing your Java solution below
+        	// DO NOT write main() function
+        	if(root==null){
+            	    return 0;
+        	}else{
+            	    return minTreeDepth(root,1); // root is level 1 !!!
+        	}
         }
-    }
 	/**
 	 * recursive function
 	 * @param root
