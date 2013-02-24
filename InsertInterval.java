@@ -18,7 +18,8 @@ import java.util.Iterator;
  *
  */
 public class InsertInterval {
-	public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+	
+    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
         Iterator<Interval> it = intervals.iterator();
     	Interval start=null;
     	boolean finish=false;
@@ -64,7 +65,7 @@ public class InsertInterval {
                 intervals.add(newInterval);
                 return intervals;
             }
-    		start.end=newInterval.end;//set the end as new interval's end any way
+    	    start.end=newInterval.end;//set the end as new interval's end any way
     	}
     	return intervals;
     }
