@@ -13,7 +13,7 @@ package leetcode;
 
 	The flattened tree should look like:
 
-   	1
+    1
      \
       2
        \
@@ -29,7 +29,7 @@ package leetcode;
  *
  */
 public class FlattenBinaryTreetoLinkedList {
-	TreeNode pre;
+    TreeNode pre;
     
     public void flatten(TreeNode root) {
         preOrderTraversal(root);
@@ -60,12 +60,12 @@ public class FlattenBinaryTreetoLinkedList {
     }
     /**
      * change it to required tree.
-     *  						1                1
-     *                         /				  \
+     *  			1                1
+     *                         /		  \
      *                        2                    2
      *                       /           =>         \
      *                      3                        3
-     *                     /						  \
+     *                     /			      \
      *                    4                            4
      *                   ..                            ..
      * @param root
