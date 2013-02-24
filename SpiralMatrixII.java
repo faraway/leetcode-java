@@ -14,7 +14,9 @@ You should return the following matrix:
 
 public class SprialMatrixII {
     public int[][] generateMatrix(int n) {
+     
        int[][] matrix = new int[n][n];
+       
        if(n<1)
             return matrix;
        int val=1;
