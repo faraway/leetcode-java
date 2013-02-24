@@ -12,7 +12,7 @@ package leetcode;
  *
  */
 public class ValidateBinarySearchTree {
-	public boolean isValidBST(TreeNode root) {
+    public boolean isValidBST(TreeNode root) {
         return validateBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
     }
     /**
@@ -32,19 +32,4 @@ public class ValidateBinarySearchTree {
         }
         return validateBST(root.left,min,root.val) && validateBST(root.right,root.val,max);
     }
-    
-    /** and use rootParent will not work either, because of root.parent.parent.... and so on..
-    public boolean validateBST(TreeNode root, int rootParent, int type){
-        if(root == null){
-            return true;
-        }
-        if(root.left!=null && (root.left.val >= root.val||type==1&&root.left.val<=rootParent)){
-            return false;
-        }
-        if(root.right!=null && (root.right.val <= root.val||type==0&&root.right.val>=rootParent)){
-            return false;
-        }
-        return validateBST(root.left,root.val,0) && validateBST(root.right,root.val,1);
-    }
-    **/
-}
+}   
