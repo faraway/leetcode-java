@@ -29,7 +29,7 @@ After calling your function, the tree should look like:
  *
  */
 public class PopulatingNextRightPointersInEachNodeII {
-	public void connect(TreeLinkNode root) {
+    public void connect(TreeLinkNode root) {
         if(root==null)
             return;
         /**
@@ -52,7 +52,7 @@ public class PopulatingNextRightPointersInEachNodeII {
         TreeLinkNode temp = root;
         //connect next level of current root node level
         while(temp!=null){
-            if(temp.left!=null)
+            if(temp.left!=null){
             	if(rightmost==null){
             		rightmost=temp.left;
             		nextHead=temp.left;
@@ -61,7 +61,8 @@ public class PopulatingNextRightPointersInEachNodeII {
             		rightmost.next = temp.left;
             		rightmost = rightmost.next;
             	}
-            if(temp.right!=null)
+            }
+            if(temp.right!=null){
             	if(rightmost==null){
             		rightmost=temp.right;
             		nextHead=temp.right;
@@ -70,6 +71,7 @@ public class PopulatingNextRightPointersInEachNodeII {
             		rightmost.next = temp.right;
             		rightmost = rightmost.next;
             	}
+            }
             temp=temp.next;
         }
         //head in next level
