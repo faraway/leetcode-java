@@ -14,7 +14,7 @@ package leetcode;
  */
 public class EditDistance {
 	
-	public int minDistance(String word1, String word2) {
+    public int minDistance(String word1, String word2) {
         if(word1==null||word1.length()==0){
             return word2.length();
         }
