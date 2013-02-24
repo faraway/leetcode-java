@@ -34,8 +34,8 @@ After calling your function, the tree should look like:
  */
 public class PopulatingNextRightPointersInEachNode {
 	public void connect(TreeLinkNode root) {
-        connect(root.left,root.right);
-    }
+            connect(root.left,root.right);
+        }
 	
 	private void connect(TreeLinkNode n1,TreeLinkNode n2){
 		if(n1==null||n2==null)
