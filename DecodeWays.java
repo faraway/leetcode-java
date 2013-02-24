@@ -18,7 +18,7 @@ package leetcode;
  */
 public class DecodeWays {
 	
-	public int numDecodings(String s) {
+    public int numDecodings(String s) {
         if(s!=null && s.length() !=0){
             return getDecode(s,0);   
         }else{
@@ -27,7 +27,7 @@ public class DecodeWays {
         
     }
     //brute force recursive. a lot of duplicated computation
-    public int getDecode(String s,int start){
+    private int getDecode(String s,int start){
         if(start==s.length()){
             return 1;
         }
@@ -52,7 +52,7 @@ public class DecodeWays {
      * @param s
      * @return
      */
-    public int numDecodingsOptimal(String s) {
+    private int numDecodingsOptimal(String s) {
         if(s==null || s.length() ==0){
             return 0;
         }
