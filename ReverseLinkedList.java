@@ -14,7 +14,7 @@ class ListNode {
  *
  */
 public class ReverseLinkedList {
-	int m = 0;
+    int m = 0;
     int n = 0;
     ListNode last;
     ListNode conti;
@@ -63,7 +63,9 @@ public class ReverseLinkedList {
         }
     }
     
-    
+    /**
+     * iterative way
+     */
     public ListNode reverseBetweenIterative(ListNode head, int m, int n) {
     	if(m==n)
             return head;
