@@ -40,8 +40,8 @@ public class PalindromePartitioningII {
     	for(int len=2;len<=n;len++){//when len=1,it's zero cut.
     		for(int i=0;i<n-len+1;i++){
     			int j=i+len-1;
-    			//calculate matrix[i,j],check if s[i..j] is palindrome
-    			if(len==2)
+				//calculate matrix[i,j],check if s[i..j] is palindrome
+				if(len==2)
                     palindrome[i][j]=s.charAt(i)==s.charAt(j);
                 else
                     palindrome[i][j]=s.charAt(i)==s.charAt(j)&&palindrome[i+1][j-1];
