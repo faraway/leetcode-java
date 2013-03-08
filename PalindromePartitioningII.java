@@ -11,7 +11,9 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 
 public class PalindromePartitioningII {
     
-    //note: this won't pass the last test case in large dataset.
+    //NOTE: this won't pass the last test case in large dataset.
+    //This is sort of one-dimension DP, to make it more effecient,
+    //replace the validPaindrome function as another DP matrix like in minCutDP solution.
     public int minCut(String s) {
         //array[i] means min cut of s.substring(0,i)
         int[] array = new int[s.length()+1];
