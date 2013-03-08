@@ -28,7 +28,8 @@ public class PalindromePartitioningII {
         return array[s.length()];
     }
     
-    //DP approach, still, can't pass the last test case
+    //DP approach, still, can't pass the last test case. 
+    //NOTE:This can be regarded as a viriation of Matrix Chain Production Problem
     public int minCutDP(String s){
         int n= s.length();
         int[][] matrix= new int[n][n];
