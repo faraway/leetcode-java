@@ -28,6 +28,38 @@ public class PalindromePartitioningII {
         return array[s.length()];
     }
     
+    //DP approach, still, can't pass the last test case
+    public int minCutDP(String s){
+        int n= s.length();
+        int[][] matrix= new int[n][n];
+        boolean[][] palindrome = new boolean[n][n];
+        
+        for(int i=0;i<n;i++)
+            palindrome[i][i]=true;
+    	
+    	for(int len=2;len<=n;len++){//when len=1,it's zero cut.
+    		for(int i=0;i<n-len+1;i++){
+    			int j=i+len-1;
+    			//calculate matrix[i,j],check if s[i..j] is palindrome
+    			if(len==2)
+                    palindrome[i][j]=s.charAt(i)==s.charAt(j);
+                else
+                    palindrome[i][j]=s.charAt(i)==s.charAt(j)&&palindrome[i+1][j-1];
+                    
+                if(palindrome[i][j])
+                    continue;
+                //if not, calculate min cut
+    			int min=Integer.MAX_VALUE;
+    			for(int k=i;k<j;k++){
+    				int temp = matrix[i][k]+matrix[k+1][j]+1;
+    				if(temp<min)
+    					min=temp;
+    			}
+    			matrix[i][j]=min;
+    		}
+    	}
+    	return matrix[0][n-1];
+    }
     
 
     private boolean validPalindrome(String s, int start, int end){
