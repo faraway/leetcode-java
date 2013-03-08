@@ -38,10 +38,10 @@ public class PalindromePartitioningII {
             palindrome[i][i]=true;
     	
     	for(int len=2;len<=n;len++){//when len=1,it's zero cut.
-    		for(int i=0;i<n-len+1;i++){
-    			int j=i+len-1;
-				//calculate matrix[i,j],check if s[i..j] is palindrome
-				if(len==2)
+    	    for(int i=0;i<n-len+1;i++){
+    		int j=i+len-1;
+		//calculate matrix[i,j],check if s[i..j] is palindrome
+		if(len==2)
                     palindrome[i][j]=s.charAt(i)==s.charAt(j);
                 else
                     palindrome[i][j]=s.charAt(i)==s.charAt(j)&&palindrome[i+1][j-1];
@@ -49,14 +49,14 @@ public class PalindromePartitioningII {
                 if(palindrome[i][j])
                     continue;
                 //if not, calculate min cut
-    			int min=Integer.MAX_VALUE;
-    			for(int k=i;k<j;k++){
-    				int temp = matrix[i][k]+matrix[k+1][j]+1;
-    				if(temp<min)
-    					min=temp;
-    			}
-    			matrix[i][j]=min;
+    		int min=Integer.MAX_VALUE;
+    		for(int k=i;k<j;k++){
+    		    int temp = matrix[i][k]+matrix[k+1][j]+1;
+    		    if(temp<min)
+    			min=temp;
     		}
+    		matrix[i][j]=min;
+    	    }
     	}
     	return matrix[0][n-1];
     }
