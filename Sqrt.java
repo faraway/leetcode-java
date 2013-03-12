@@ -14,14 +14,14 @@ public class Sqrt {
       
        //without accuracy version. Still only several times of iteration
        public static double sqrt(double x){
-      	double sqrt = x;
-		double pre = 0;
-		while(sqrt!=pre){
-			pre=sqrt;
-			sqrt=(sqrt+x/sqrt)/2;
-		}
-		return sqrt;
-	 }
+             double sqrt = x;
+	     double pre = 0;
+	     while(sqrt!=pre){
+	          pre=sqrt;
+		  sqrt=(sqrt+x/sqrt)/2;
+	     }
+	     return sqrt;
+       }
       
        public static void main(String[] args){
              System.out .println(sqrt( 1231311244.0));
