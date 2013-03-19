@@ -1,5 +1,4 @@
 
-
 public class SearchInRotatedSortedArrayII {
 
     public int search(int[] A, int target) {
@@ -24,7 +23,11 @@ public class SearchInRotatedSortedArrayII {
                 return search(A, target, mid+1, end);
             else
                 return search(A, target, start,mid-1);
-        }else{ // A[start]=A[mid], target can be in both halves
+        }else{ // A[start]=A[mid], target can be in both halves. e.g.target=4, 34512333333, 3333345123
+            /**
+             * one possible improvement is that check if A[mid] == A[end]
+             * if A[mid]!=A[end], than start..mid must be all duplicates, just search mid->end half is enough.
+             **/
             int temp = search(A, target, start,mid-1);
             if(temp!=-1)
                 return temp;
