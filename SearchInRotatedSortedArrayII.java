@@ -1,17 +1,25 @@
+/**
+Follow up for "Search in Rotated Sorted Array":
+What if duplicates are allowed?
+
+Would this affect the run-time complexity? How and why?
+
+Write a function to determine if a given target is in the array.
+**/
 
 public class SearchInRotatedSortedArrayII {
 
-    public int search(int[] A, int target) {
+    public boolean search(int[] A, int target) {
         return search(A, target, 0, A.length-1);
     }
     
-    private int search(int[] A, int target, int start, int end){
+    private boolean search(int[] A, int target, int start, int end){
         if(start>end || (start==end && A[start]!=target))
-            return -1;
+            return false;
         int mid=(start+end)/2;
         
         if(A[mid]==target)
-            return mid;
+            return true;
         
         if(A[start]<A[mid]){ // start..mid part is in order
             if(target>=A[start] && target< A[mid])
@@ -25,12 +33,11 @@ public class SearchInRotatedSortedArrayII {
                 return search(A, target, start,mid-1);
         }else{ // A[start]=A[mid], target can be in both halves. e.g.target=4, 34512333333, 3333345123
             /**
-             * one possible improvement is that check if A[mid] == A[end]
-             * if A[mid]!=A[end], than start..mid must be all duplicates, just search mid->end half is enough.
-             **/
-            int temp = search(A, target, start,mid-1);
-            if(temp!=-1)
-                return temp;
+* one possible improvement is that check if A[mid] == A[end]
+* if A[mid]!=A[end], than start..mid must be all duplicates, just search mid->end half is enough.
+**/
+            if(search(A, target, start,mid-1))
+                return true;
             else
                 return search(A, target, mid+1,end);
         }
