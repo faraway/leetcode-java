@@ -21,7 +21,7 @@ public class BinaryTreeMaximumPathSum {
     
     private Result getMaxPathSum(TreeNode root){
         if(root==null)
-            return new Result(Integer.MIN_VALUE,Integer.MIN_VALUE);
+            return new Result(Integer.MIN_VALUE,0);
         Result left = getMaxPathSum(root.left);
         Result right = getMaxPathSum(root.right);
         
@@ -41,7 +41,7 @@ public class BinaryTreeMaximumPathSum {
                 r.max = right.pathMax+root.val;
         }
             
-        if(left.pathMax>0 && right.pathMax>0 && right.pathMax+left.pathMax+root.val>r.max)
+        if(right.pathMax+left.pathMax+root.val>r.max)
             r.max=right.pathMax+left.pathMax+root.val;
         return r;
     }
