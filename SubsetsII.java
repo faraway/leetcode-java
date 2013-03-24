@@ -42,7 +42,7 @@ public class SubsetsII {
                 ArrayList<Integer> temp = (ArrayList<Integer>)current.clone();
                 temp.add(input[i]);
                 result.add(temp);
-                generateSubsets(i+1,(ArrayList<Integer>)temp.clone());
+                generateSubsets(i+1,temp);
             }
         }
     }
