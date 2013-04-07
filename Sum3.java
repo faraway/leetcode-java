@@ -26,6 +26,7 @@ public class Sum3 {
              int start = i+1;
              int end = num.length-1;
              while(start<end){
+                 //avoid duplicates
                  if(start!=i+1 && num[start]==num[start-1]){
                      start++;
                      continue;
